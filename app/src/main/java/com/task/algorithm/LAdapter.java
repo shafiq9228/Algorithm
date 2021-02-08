@@ -49,9 +49,15 @@ public class LAdapter extends BaseAdapter {
 
         View v = inflater.inflate(R.layout.list_add, null);
         TextView Title = v.findViewById(R.id.title);
+        TextView FST  = v.findViewById(R.id.st);
+        TextView FET  = v.findViewById(R.id.et);
+        TextView FProfit  = v.findViewById(R.id.profit);
 
 
         Title.setText(""+SUBJECT.get(i));
+        FST.setText(""+ST.get(i));
+        FET.setText(""+ET.get(i));
+        FProfit.setText(""+Profit.get(i));
         return v;
     }
 }

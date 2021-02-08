@@ -34,6 +34,7 @@
         android:layout_width="match_parent"
         android:id="@+id/Lst"
         android:layout_marginTop="75dp"
+        android:paddingBottom="55dp"
         android:layout_height="wrap_content"/>
 
     <!-- FrameLAyout Start-->
@@ -133,6 +134,16 @@
     </FrameLayout>
 
     <!-- FrameLAyout End-->
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:backgroundTint="#ddd"
+        android:textColor="#333"
+        android:id="@+id/Calculate"
+        android:text="Calculate"
+        android:layout_gravity="bottom"
+        android:layout_height="50dp"/>
 
 
 </FrameLayout>

@@ -2,6 +2,7 @@ package com.task.algorithm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView Cancel;
 
     Button AddData;
+    Button Calculate;
 
     EditText FST,FET,FProfit,FSB;
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         Dialog = findViewById(R.id.Dialog_Layout);
         Cancel = findViewById(R.id.cancel);
         AddData = findViewById(R.id.fadd2);
+        Calculate = findViewById(R.id.Calculate);
 
         FST =  findViewById(R.id.fst2);
         FET = findViewById(R.id.fet2);
@@ -90,6 +93,22 @@ public class MainActivity extends AppCompatActivity {
                 Profit.add(""+Fprofit);
 
                 adapter.notifyDataSetChanged();
+
+                FET.setText("");
+                FST.setText("");
+                FSB.setText("");
+                FProfit.setText("");
+            }
+        });
+
+        Calculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                intent.putExtra("Result",30);
+                startActivity(intent);
+
             }
         });
     }
