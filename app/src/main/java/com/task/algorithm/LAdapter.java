@@ -11,18 +11,21 @@ import java.util.ArrayList;
 
 public class LAdapter extends BaseAdapter {
 
-    public ArrayList<String> ST;
-    public ArrayList<String> ET;
-    public ArrayList<String> Profit;
+    public ArrayList<String> ST= new ArrayList<>();
+    public ArrayList<String> SUBJECT= new ArrayList<>();
+    public ArrayList<String> ET= new ArrayList<>();
+    public ArrayList<String> Profit= new ArrayList<>();
+
     LayoutInflater inflater;
     Context context;
 
-    public LAdapter(Context context, ArrayList<String> ST,ArrayList<String> ET,ArrayList<String> Profit)
+    public LAdapter(Context context, ArrayList<String> SUBJECT,ArrayList<String> ST,ArrayList<String> ET,ArrayList<String> Profit)
     {
         this.context = context;
         this.ET = ET;
         this.ST = ST;
         this.Profit = Profit;
+        this.SUBJECT = SUBJECT;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     }
@@ -46,7 +49,9 @@ public class LAdapter extends BaseAdapter {
 
         View v = inflater.inflate(R.layout.list_add, null);
         TextView Title = v.findViewById(R.id.title);
-        Title.setText("New Titile");
+
+
+        Title.setText(""+SUBJECT.get(i));
         return v;
     }
 }

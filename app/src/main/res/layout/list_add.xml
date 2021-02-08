@@ -25,29 +25,35 @@
                 android:orientation="horizontal"
                 android:layout_marginRight="10dp"
                 android:layout_height="40dp">
-                <EditText
+                <TextView
                     android:layout_width="0dp"
                     android:hint="Start Time"
                     android:id="@+id/st"
+                    android:gravity="center"
                     android:layout_weight="0.3"
+                    android:background="@drawable/back_button"
                     android:layout_height="match_parent"/>
                 <View
                     android:layout_width="0dp"
                     android:layout_weight="0.1"
                     android:layout_height="match_parent"/>
-                <EditText
+                <TextView
                     android:layout_width="0dp"
-                    android:hint="End Time"
+                    android:hint="Start Time"
                     android:id="@+id/et"
+                    android:gravity="center"
+                    android:background="@drawable/back_button"
                     android:layout_weight="0.3"
                     android:layout_height="match_parent"/>
                 <View
                     android:layout_width="0dp"
                     android:layout_weight="0.1"
                     android:layout_height="match_parent"/>
-                <EditText
+                <TextView
                     android:layout_width="0dp"
                     android:hint="Profit"
+                    android:gravity="center"
+                    android:background="@drawable/back_button"
                     android:id="@+id/profit"
                     android:layout_weight="0.2"
                     android:layout_height="match_parent"/>
