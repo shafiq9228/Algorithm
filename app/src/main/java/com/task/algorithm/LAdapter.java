@@ -11,15 +11,15 @@ import java.util.ArrayList;
 
 public class LAdapter extends BaseAdapter {
 
-    public ArrayList<String> ST= new ArrayList<>();
+    public ArrayList<Integer> ST= new ArrayList<>();
     public ArrayList<String> SUBJECT= new ArrayList<>();
-    public ArrayList<String> ET= new ArrayList<>();
-    public ArrayList<String> Profit= new ArrayList<>();
+    public ArrayList<Integer> ET= new ArrayList<>();
+    public ArrayList<Integer> Profit= new ArrayList<>();
 
     LayoutInflater inflater;
     Context context;
 
-    public LAdapter(Context context, ArrayList<String> SUBJECT,ArrayList<String> ST,ArrayList<String> ET,ArrayList<String> Profit)
+    public LAdapter(Context context, ArrayList<String> SUBJECT,ArrayList<Integer> ST,ArrayList<Integer> ET,ArrayList<Integer> Profit)
     {
         this.context = context;
         this.ET = ET;

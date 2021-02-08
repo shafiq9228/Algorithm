@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView Add;
     ListView Lst;
-    public ArrayList<String> ST = new ArrayList<>();
+    public ArrayList<Integer> ST = new ArrayList<>();
     public ArrayList<String> SUBJECT = new ArrayList<>();
-    public ArrayList<String> ET= new ArrayList<>();
-    public ArrayList<String> Profit= new ArrayList<>();
+    public ArrayList<Integer> ET= new ArrayList<>();
+    public ArrayList<Integer> Profit= new ArrayList<>();
     LAdapter adapter;
 
     FrameLayout Dialog;
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
         Lst.setAdapter(adapter);
 
-        Toast.makeText(this, "Toast Added is changed", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, "Toast Added is changed", Toast.LENGTH_SHORT).show();
 
         Add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,24 +80,32 @@ public class MainActivity extends AppCompatActivity {
         AddData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+
+                if(FST.getText().toString().length()<1 || FET.getText().toString().length()<1 || FProfit.getText().toString().length()<1 || FSB.getText().toString().length()<1)
+                {
+                    Toast.makeText(MainActivity.this, "Inputs Cannot be Empty", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 Dialog.setVisibility(View.GONE);
 
-                String Fsb = FSB.getText().toString();
-                String Fst = FST.getText().toString();
-                String Fet = FET.getText().toString();
-                String Fprofit = FProfit.getText().toString();
+                    String Fsb = FSB.getText().toString();
+                    int Fst = Integer.parseInt(FST.getText().toString());
+                    int Fet = Integer.parseInt(FET.getText().toString());
+                    int Fprofit = Integer.parseInt(FProfit.getText().toString());
 
-                SUBJECT.add(""+Fsb);
-                ST.add(""+Fst);
-                ET.add(""+Fet);
-                Profit.add(""+Fprofit);
+                    SUBJECT.add("" + Fsb);
+                    ST.add(Fst);
+                    ET.add(Fet);
+                    Profit.add(Fprofit);
+                    adapter.notifyDataSetChanged();
 
-                adapter.notifyDataSetChanged();
+                    FET.setText("");
+                    FST.setText("");
+                    FSB.setText("");
+                    FProfit.setText("");
 
-                FET.setText("");
-                FST.setText("");
-                FSB.setText("");
-                FProfit.setText("");
             }
         });
 
@@ -105,9 +113,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, ResultActivity.class);
-                intent.putExtra("Result",30);
-                startActivity(intent);
+
+
+                Job joblist[] = new Job[ST.size()];
+
+                for(int i=0;i<ST.size();i++)
+                {
+                    joblist[i] = new Job(ST.get(i),ET.get(i),Profit.get(i));
+                }
+
+                int Result = WeightedIntervalScheduling.schedule(joblist);
+
+
+                  Intent intent = new Intent(MainActivity.this, ResultActivity.class);
+                  intent.putExtra("Result",Result);
+                  startActivity(intent);
+
+
+             //   Job jobs[] = {new Job(2, 100, 200),new Job(3, 5, 20),new Job(1, 2, 50), new Job(6, 19, 100)};
+
+
 
             }
         });
