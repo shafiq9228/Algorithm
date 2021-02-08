@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+        <!-- start Job -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:text="Data Structures"
+                android:textColor="#333"
+                android:id="@+id/title"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginRight="10dp"
+                android:layout_height="40dp">
+                <EditText
+                    android:layout_width="0dp"
+                    android:hint="Start Time"
+                    android:id="@+id/st"
+                    android:layout_weight="0.3"
+                    android:layout_height="match_parent"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="0.1"
+                    android:layout_height="match_parent"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:hint="End Time"
+                    android:id="@+id/et"
+                    android:layout_weight="0.3"
+                    android:layout_height="match_parent"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_weight="0.1"
+                    android:layout_height="match_parent"/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:hint="Profit"
+                    android:id="@+id/profit"
+                    android:layout_weight="0.2"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- End Job -->
+
+    </LinearLayout>
