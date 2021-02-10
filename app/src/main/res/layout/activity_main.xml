@@ -14,11 +14,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Algorithm"
+            android:text="Study Scheduler"
+            android:gravity="center"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="#333"
-            android:textSize="30sp"
+            android:textSize="25sp"
             />
 
         <ImageView
@@ -27,6 +28,14 @@
             android:src="@drawable/ic_add"
             android:id="@+id/Add"
             android:layout_marginRight="20dp"
+            android:layout_height="50dp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_gravity="left"
+            android:src="@drawable/ic_clear"
+            android:id="@+id/Clear"
+            android:layout_marginLeft="20dp"
             android:layout_height="50dp"/>
     </FrameLayout>
 

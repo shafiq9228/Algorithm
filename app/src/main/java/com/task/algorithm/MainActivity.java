@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     LAdapter adapter;
 
     FrameLayout Dialog;
-    ImageView Cancel;
+    ImageView Cancel,Clear;
 
     Button AddData;
     Button Calculate;
@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         FET = findViewById(R.id.fet2);
         FProfit = findViewById(R.id.fprofit2);
         FSB = findViewById(R.id.fsb2);
+
+        Clear = findViewById(R.id.Clear);
 
         Lst.setAdapter(adapter);
 
@@ -117,6 +119,12 @@ public class MainActivity extends AppCompatActivity {
 
                 Job joblist[] = new Job[ST.size()];
 
+                if(joblist.length==0)
+                {
+                    Toast.makeText(getApplicationContext(),"Empty subjects",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 for(int i=0;i<ST.size();i++)
                 {
                     joblist[i] = new Job(ST.get(i),ET.get(i),Profit.get(i));
@@ -134,6 +142,23 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        Clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ST.add(0);
+                ET.add(1);
+                SUBJECT.add("dcv");
+                Profit.add(2);
+
+                ST.removeAll(ST);
+                ET.removeAll(ET);
+                SUBJECT.removeAll(SUBJECT);
+                Profit.removeAll(Profit);
+
+                adapter.notifyDataSetChanged();
             }
         });
     }
